@@ -1,0 +1,52 @@
+{% extends "dashboard/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="card-body">
+                    <h4 class="card-title">{{title}}</h4>
+                    <div class="form-group row">
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Judul</label>
+                        <div class="col-sm-9">{{forms.judul}}
+                            <span class="from-text text-warning">Masukan Judul</span> 
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Isi Artikel</label>
+                        <div class="col-sm-9">{{forms.isi}}
+                            <span class="from-text text-warning">Masukan Isi Artikel</span> 
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Kategori</label>
+                        <div class="col-sm-9">{{forms.kategori}}
+                            <span class="from-text text-warning">Masukan Kategori</span> 
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Thumbnail</label>
+                        <div class="col-sm-9">{{forms.thumbnail}}</div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+{% endblock %}
