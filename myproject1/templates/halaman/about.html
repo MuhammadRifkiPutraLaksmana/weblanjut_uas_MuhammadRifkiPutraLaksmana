@@ -1,0 +1,103 @@
+{% extends "halaman/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="page-title wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 text-center">
+                <h2><i class="fa fa-info-circle"></i> Tentang Kami </h2>
+            </div><!-- end col -->                   
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end page-title -->
+
+<section class="section wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="page-wrapper">
+                    <h4 >Visi dan Misi Kami</h4>
+                    <p>
+                        Selamat datang di halaman "Tentang Kami"! Kami adalah tim yang berdedikasi untuk memberikan berita dan informasi terkini yang akurat dan terpercaya. 
+                        Kami percaya bahwa akses terhadap informasi yang benar adalah hak setiap individu, dan oleh karena itu kami berkomitmen untuk menyajikan berita yang bebas 
+                        dari bias dan berdasar pada fakta.
+                    </p>
+                    <p>
+                        <strong>Visi Kami:</strong> Menjadi sumber berita terpercaya yang menginspirasi dan mencerdaskan masyarakat melalui informasi yang akurat dan mendalam.
+                    </p>
+                    <p>
+                        <strong>Misi Kami:</strong> 
+                        <ul>
+                            <li>Menyajikan berita yang cepat dan akurat.</li>
+                            <li>Menyediakan analisis yang mendalam dari berbagai sudut pandang.</li>
+                            <li>Mendukung kebebasan pers dan hak untuk informasi.</li>
+                            <li>Mendorong literasi media di kalangan masyarakat.</li>
+                        </ul>
+                    </p>
+
+                    <hr class="invis1">
+
+                    <h4>Tim Kami</h4>
+                    <div class="custombox authorbox clearfix" id="orang1">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <img src="{% static 'halaman/images/orang1.jpeg' %}" alt="Rifki" class="img-fluid rounded-circle"> 
+                            </div><!-- end col -->
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <h4><a href="#">Rifki</a></h4>
+                                <p>
+                                    Rifki adalah jurnalis senior dengan pengalaman lebih dari 10 tahun di industri media. 
+                                    Beliau memiliki keahlian dalam liputan berita politik dan sosial. 
+                                    <a href="#orang1">Kunjungi situs web saya</a> untuk mengetahui lebih lanjut tentang karya-karya Rifki.
+                                </p>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end author-box -->
+
+                    <hr class="invis1">
+
+                    <div class="custombox authorbox clearfix" id="orang2">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <img src="{% static 'halaman/images/orang2.jpeg' %}" alt="Pila" class="img-fluid rounded-circle"> 
+                            </div><!-- end col -->
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <h4><a href="#">Pila</a></h4>
+                                <p>
+                                    Pila adalah penulis dan editor yang berdedikasi dalam menyampaikan berita ekonomi dan bisnis. 
+                                    Dengan latar belakang akademis yang kuat, Pila memastikan setiap informasi yang disajikan akurat dan mudah dipahami. 
+                                    <a href="#orang2">Kunjungi situs web saya</a> untuk membaca artikel-artikel dari Pila.
+                                </p>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end author-box -->
+
+                    <hr class="invis1">
+
+                    <div class="custombox authorbox clearfix" id="orang3">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <img src="{% static 'halaman/images/orang3.jpeg' %}" alt="MRPL" class="img-fluid rounded-circle"> 
+                            </div><!-- end col -->
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <h4><a href="#">MRPL</a></h4>
+                                <p>
+                                    MRPL adalah ahli teknologi dan penulis yang fokus pada perkembangan terbaru dalam dunia teknologi dan sains. 
+                                    Beliau selalu mengikuti tren terbaru dan menyajikan berita dengan perspektif yang mendalam. 
+                                    <a href="#orang3">Kunjungi situs web saya</a> untuk mengeksplorasi lebih lanjut tentang tulisan-tulisan MRPL.
+                                </p>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end author-box -->
+
+                </div><!-- end page-wrapper -->
+                <hr class="invis">
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+{% endblock content %}

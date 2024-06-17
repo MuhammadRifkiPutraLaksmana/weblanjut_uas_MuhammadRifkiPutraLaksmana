@@ -1,0 +1,66 @@
+{% extends "halaman/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 text-center">
+                <h2><i class="fa fa-user"></i> Profil Pengguna</h2>
+            </div><!-- end col -->                  
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end page-title -->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="page-wrapper">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="user-profile-picture text-center">
+                                {% if biodata.foto %}
+                                    <img src="{{ biodata.foto.url }}" class="img-fluid rounded-circle" alt="User Profile Picture">
+                                {% else %}
+                                    <img src="{% static 'img/profil.png' %}" class="img-fluid rounded-circle" alt="User Profile Picture">
+                                {% endif %}
+                                <h3 class="mt-3">{{ user.username }}</h3>
+                                <p class="text-muted">{{ user.email }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="user-profile-details">
+                                <h4>Informasi Pribadi</h4>
+                                <p><strong>Nama Lengkap :</strong> {{ user.get_full_name }}</p>
+                                <p><strong>Nama Depan :</strong> {{ user.first_name }}</p>
+                                <p><strong>Nama Belakang :</strong> {{ user.last_name }}</p>
+                                <p><strong>Email :</strong> {{ user.email }}</p>
+                                <p><strong>Telepon :</strong> {{ biodata.telpon }}</p>
+                                <p><strong>Alamat :</strong> {{ biodata.alamat }}</p>
+                                
+                                <h4 class="mt-4">Bio</h4>
+                                <p>{{ biodata.bio|default:"Belum ada bio." }}</p>
+                                
+                                <a href="{% url 'edit_profile' %}" class="btn btn-primary mt-4">Edit Profil</a>
+                                
+                                <!--
+                                <h4 class="mt-4">Interaksi Terbaru</h4>
+                                <ul>
+                                    <li>Mengomentari artikel <a href="#">"Judul Artikel"</a></li>
+                                    <li>Menyukai artikel <a href="#">"Judul Artikel Lainnya"</a></li>
+                                    <li>Mengikuti topik <a href="#">"Topik Menarik"</a></li>
+                                </ul>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end page-wrapper -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+{% endblock content %}

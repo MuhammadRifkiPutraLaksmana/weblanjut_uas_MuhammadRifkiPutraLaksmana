@@ -1,0 +1,68 @@
+{% extends "dashboard/base.html" %}
+
+{% load static %}
+
+{% block css%}
+
+<link href="{% static 'dashboard/assets/libs/datatables.net-bs4/css/dataTables.bootstrapp4.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-center">Daftar Kategori</h3>
+                <a class="btn btn-outline-primary" href=" {% url "kategori_add" %} "><i class="fa fa-plus"></i> Kategori</a>
+                <div class="table-responsive">
+                    <table id="zero_config" class="table table-striped table-bordered">
+                        <thead>
+                            <tr class="center-align">
+                                <th>No</th> 
+                                <th>Name</th>
+                                <th class="no-sort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for kate in kategori  %}
+
+                            <tr>
+                                <td class="text-center">{{forloop.counter}}</td> 
+                                <td>{{kate.nama}}</td>
+                                <td class="right-align">
+                                    {% comment %} <a href="#" class="btn btn-outline-success"> {% endcomment %}
+                                    <a class="btn btn-outline-success" href="{% url "kategori_update" kate.id %}"><i class="fas fa-edit"></i> Edit</a>
+                                    <a class="btn btn-outline-danger" href="{% url "kategori_delete" kate.id %}" onclick="return confirm('Yakin ingin dihapus?')"><i class="fa fa-trash"></i> Hapus</a>
+                                </td>
+                            </tr>
+                            
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr class="center-align">
+                                <th>No</th> 
+                                <th>Name</th>
+                                <th class="no-sort">Action</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+
+<script src="{% static 'dashboard/assets/extra-libs/DataTables/datatables.min.js' %}"></script>
+<script>
+    /****************************************
+     *       Basic Table                   *
+     ****************************************/
+    $('#zero_config').DataTable();
+</script>
+
+{% endblock js %}

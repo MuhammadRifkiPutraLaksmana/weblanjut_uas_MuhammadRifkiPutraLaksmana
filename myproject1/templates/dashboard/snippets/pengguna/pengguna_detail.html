@@ -1,0 +1,46 @@
+{% extends "dashboard/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{title}}</h4>
+                    <div class="form-group row">
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Nama Akun :</label>
+                        <div class="col-sm-9">{{form.username}}<br>
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Nama Depan :</label>
+                        <div class="col-sm-9">{{form.first_name}}<br>
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Nama Belakang :</label>
+                        <div class="col-sm-9">{{form.last_name}}<br>
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Email :</label>
+                        <div class="col-sm-9">{{form.email}}<br>
+                        </div>
+                        <label for="groups" class="col-sm-3 text-end control-label col-form-label">Status :</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="groups" value="{% if groups %}{% for group in groups %}{{ group.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% else %}Pengguna{% endif %}" class="form-control" readonly><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <a href="{% url 'pengguna_list' %}" class="btn btn-primary">Kembali</a>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

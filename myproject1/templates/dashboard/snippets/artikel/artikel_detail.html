@@ -1,0 +1,48 @@
+{% extends "dashboard/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{title}}</h4>
+                    <div class="form-group row">
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Judul</label>
+                        <div class="col-sm-9">{{artikel.judul}}
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Isi Artikel</label>
+                        <div class="col-sm-9">{{artikel.isi|safe}}
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Kategori</label>
+                        <div class="col-sm-9">{{artikel.kategori}}
+                        </div>
+                        <label for="fname"
+                            class="col-sm-3 text-end control-label col-form-label">Thumbnail</label>
+                        <div class="col-sm-9">
+                          {% if artikel.thumbnail %}
+                          
+                          <img src="{{artikel.thumbnail.url}}" alt="" />
+
+                          {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <a href="{% url 'artikel_list' %}" class="btn btn-primary">Kembali</a>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+artikel
